@@ -1,0 +1,69 @@
+package com.example.sink.domain;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Objects;
+
+
+@Document
+public class User {
+
+    @Id
+    @JsonProperty("id")
+    private int id;
+
+    @JsonProperty("processed")
+    private boolean isProcessed;
+
+    @JsonProperty("saved")
+    private boolean isSaved;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isProcessed() {
+        return isProcessed;
+    }
+
+    public void setProcessed(boolean processed) {
+        isProcessed = processed;
+    }
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public void setSaved(boolean saved) {
+        isSaved = saved;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && isProcessed == user.isProcessed && isSaved == user.isSaved;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, isProcessed, isSaved);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", isProcessed=" + isProcessed +
+                ", isSaved=" + isSaved +
+                '}';
+    }
+
+}

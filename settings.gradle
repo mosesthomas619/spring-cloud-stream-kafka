@@ -1,0 +1,6 @@
+rootProject.name = 'POC-gradle'
+include 'sink'
+include 'source'
+include 'processor'
+include 'sink'
+

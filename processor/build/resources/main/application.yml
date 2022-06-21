@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    function:
+      definition: process
+    stream:
+      bindings:
+        process-in-0:
+          destination: sourceTopic
+        process-out-0:
+          destination: processedTopic

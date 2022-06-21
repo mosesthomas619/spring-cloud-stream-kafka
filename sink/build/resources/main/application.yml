@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    function:
+      definition: consumeData
+    stream:
+      bindings:
+        consumeData-in-0:
+          destination: processedTopic
+  data:
+    mongodb:
+      host: localhost:27017
+      database: regDB
+
+
+

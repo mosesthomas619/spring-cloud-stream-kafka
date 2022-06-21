@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    function:
+      definition: source
+    stream:
+      bindings:
+        source-out-0:
+          destination: sourceTopic
+
+
+
+
+
